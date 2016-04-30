@@ -1,2 +1,2 @@
 # PrimesWithFile
-Create a file of primes every 50 MB
+Calculate prime numbers and create a file every 50 MB
