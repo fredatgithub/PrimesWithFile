@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbersMultiThreaded", "PrimeNumbersMultiThreaded\PrimeNumbersMultiThreaded.csproj", "{2FE917B1-2C42-45F4-A05A-415B91AE9FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeWithFile", "PrimeWithFile\PrimeWithFile.csproj", "{56E893FF-88A2-4C27-8B6A-203524DA7534}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTimerDemo", "WpfTimerDemo\WpfTimerDemo.csproj", "{B47C3FB8-C46A-43B4-A2E8-2949A9154490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FE917B1-2C42-45F4-A05A-415B91AE9FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE917B1-2C42-45F4-A05A-415B91AE9FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE917B1-2C42-45F4-A05A-415B91AE9FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE917B1-2C42-45F4-A05A-415B91AE9FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E893FF-88A2-4C27-8B6A-203524DA7534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E893FF-88A2-4C27-8B6A-203524DA7534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E893FF-88A2-4C27-8B6A-203524DA7534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E893FF-88A2-4C27-8B6A-203524DA7534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B47C3FB8-C46A-43B4-A2E8-2949A9154490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47C3FB8-C46A-43B4-A2E8-2949A9154490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47C3FB8-C46A-43B4-A2E8-2949A9154490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B47C3FB8-C46A-43B4-A2E8-2949A9154490}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

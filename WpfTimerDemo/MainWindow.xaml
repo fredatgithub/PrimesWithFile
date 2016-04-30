@@ -1,0 +1,12 @@
+﻿<Window x:Class="WpfTimerDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF Timer Demo"
+        Width="525"
+        Height="350">
+    <StackPanel VerticalAlignment="Top">
+        <Label Name="LabelTimer1" Margin="5,0,0,0">Time : 0:0:0</Label>
+        <Button Name="StartStop" Margin="5,0,0,0" Click="StartStop_OnClick">Start-Stop</Button>
+        <Label Name="TempsEcoule" Margin="5,0,0,0">Temps écoulé : 00:00:00</Label>
+    </StackPanel>
+</Window>

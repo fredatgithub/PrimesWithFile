@@ -1,0 +1,53 @@
+﻿<Window x:Class="PrimeWithFile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        Closed="Window_Closed"
+        Closing="Window_Closing"
+        Loaded="Window_Loaded">
+  <Window.Resources>
+    <system:String x:Key="Title">Prime Numbers v</system:String>
+  </Window.Resources>
+  <Window.Title>
+    <StaticResource ResourceKey="Title" />
+  </Window.Title>
+  <StackPanel Margin="0,0,2,0" Orientation="Vertical">
+    <StackPanel Margin="5,5,5,5"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+      <Button Name="StartStopButton"
+              Margin="5,0,5,0"
+              Click="StartOrStop"
+              Content="Start Ulong" />
+      <TextBlock Margin="10,5,0,0">Biggest Prime Found:</TextBlock>
+      <TextBlock Name="BigPrime" Margin="4,5,0,0">3</TextBlock>
+    </StackPanel>
+    <StackPanel Margin="5,5,5,5"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+      <Button Name="StartStopButtonBigInt"
+              Margin="5,0,5,0"
+              Click="StartOrStopBigInt"
+              Content="Start BigInt" />
+      <TextBlock Margin="10,5,0,0">Biggest BigInt Prime Found:</TextBlock>
+      <TextBlock Name="BigPrimeBigInt" Margin="4,5,0,0">3</TextBlock>
+    </StackPanel>
+
+    <StackPanel Margin="5,5,5,5"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+      <Button Name="StartStopButtonIntegers"
+              Margin="5,0,5,0"
+              Click="StartOrStopIntegers"
+              Content="Start Integer" />
+      <TextBlock Margin="0,5,0,0">Biggest Integer-class Prime Found:</TextBlock>
+      <TextBlock Name="BigPrimeIntegers" Margin="4,5,0,0">3</TextBlock>
+    </StackPanel>
+
+    <TextBlock Name="LabelSolution" Margin="5,0,0,0">ListNumber has 0 prime numbers found.</TextBlock>
+    <TextBlock Name="LabelSolutionBigInt" Margin="5,0,0,0">BigIntListNumber has 0 prime numbers found.</TextBlock>
+    <TextBlock Name="ChronoElapsed" Margin="5,0,0,0">Time spent is :</TextBlock>
+    <TextBlock Name="ULongMaxValue" Margin="5,0,0,0">Ulong.MaxValue is</TextBlock>
+    <TextBlock Name="BigIntMaxValue" Margin="5,0,0,0">BigInt has no MaxValue thanks to .NET Framework 4.5</TextBlock>
+  </StackPanel>
+</Window>
