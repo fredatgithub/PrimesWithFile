@@ -199,22 +199,42 @@ namespace PrimeWithFile
 
     private string ConvertToGbMbKb(FileInfo fileInfo)
     {
+      // convert a file info into Gb Mb Kb
       string length = fileInfo.Length.ToString(CultureInfo.CurrentCulture);
       if (fileInfo.Length >= (1 << 30))
       {
-        length = $"{fileInfo.Length >> 30}Gb";
+        length = string.Format("{0}Gb", fileInfo.Length >> 30);
       }
       else if (fileInfo.Length >= (1 << 20))
       {
-        length = $"{fileInfo.Length >> 20}Mb";
+        length = string.Format("{0}Mb", fileInfo.Length >> 20);
       }
       else if (fileInfo.Length >= (1 << 10))
       {
-        length = $"{fileInfo.Length >> 10}Kb";
+        length = string.Format("{0}Kb", fileInfo.Length >> 10);
       }
 
       return length;
     }
+
+    //private string ConvertToGbMbKb(FileInfo fileInfo)
+    //{
+    //  string length = fileInfo.Length.ToString(CultureInfo.CurrentCulture);
+    //  if (fileInfo.Length >= (1 << 30))
+    //  {
+    //    length = $"{fileInfo.Length >> 30}Gb";
+    //  }
+    //  else if (fileInfo.Length >= (1 << 20))
+    //  {
+    //    length = $"{fileInfo.Length >> 20}Mb";
+    //  }
+    //  else if (fileInfo.Length >= (1 << 10))
+    //  {
+    //    length = $"{fileInfo.Length >> 10}Kb";
+    //  }
+
+    //  return length;
+    //}
 
     private void SaveAndEmpty()
     {

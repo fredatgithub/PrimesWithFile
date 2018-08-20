@@ -22,9 +22,9 @@ namespace PrimeWithFile
     /// </summary>
     /// <param name="num">Int64</param>
     /// <returns>bool</returns>
-    public static bool IsPrime(Int64 num)
+    public static bool IsPrime(long num)
     {
-      Int64 _upMargin = (Int64)Math.Sqrt(num) + 1;
+      long _upMargin = (long)Math.Sqrt(num) + 1;
       // Check if number is in Prime Array
       /*
       if (Primes.Any(t => num == t))
@@ -43,7 +43,7 @@ namespace PrimeWithFile
         if (num % Primes[i] == 0) return false;
       }
       // Main iteration for Primality check
-      _upMargin = (Int64)Math.Sqrt(num) + 1;
+      _upMargin = (long)Math.Sqrt(num) + 1;
       var j = StartNum;
       var ret = true;
       while (j <= _upMargin)
@@ -62,7 +62,7 @@ namespace PrimeWithFile
     /// <returns>bool</returns>
     public static bool IsPrime(string stringNum)
     {
-      return IsPrime(Int64.Parse(stringNum));
+      return IsPrime(long.Parse(stringNum));
     }
 
     #endregion
@@ -73,9 +73,9 @@ namespace PrimeWithFile
     /// </summary>
     /// <param name="stringNum">string</param>
     /// <returns>Int64[]</returns>
-    public static Int64[] FactorizeFast(string stringNum)
+    public static long[] FactorizeFast(string stringNum)
     {
-      return FactorizeFast(Int64.Parse(stringNum));
+      return FactorizeFast(long.Parse(stringNum));
     }
 
     /// <summary>
@@ -83,13 +83,13 @@ namespace PrimeWithFile
     /// </summary>
     /// <param name="num">Int64</param>
     /// <returns>Int64[]</returns>
-    public static Int64[] FactorizeFast(Int64 num)
+    public static long[] FactorizeFast(long num)
     {
       #region vars
       // list of Factors
-      List<Int64> arrFactors = new List<Int64>();
+      List<long> arrFactors = new List<long>();
       // temp variable
-      Int64 _num = num;
+      long _num = num;
       #endregion
 
       #region Check if the number is Prime (<100)
@@ -121,15 +121,15 @@ namespace PrimeWithFile
       }
       #endregion
       #region Main Factorization Algorithm
-      Int64 upMargin = (Int64)Math.Sqrt(_num) + 1;
-      Int64 i = StartNum;
+      long upMargin = (long)Math.Sqrt(_num) + 1;
+      long i = StartNum;
       while (i <= upMargin)
       {
         if (_num % i == 0)
         {
           arrFactors.Add(i);
           _num = _num / i;
-          upMargin = (Int64)Math.Sqrt(_num) + 1;
+          upMargin = (long)Math.Sqrt(_num) + 1;
           i = StartNum;
         }
         else { i++; i++; }
@@ -141,17 +141,17 @@ namespace PrimeWithFile
     }
     #endregion
 
-    public static string FactorizeToString(Int64 number)
+    public static string FactorizeToString(long number)
     {
       // Linq: string result = FactorizeFast(number).Aggregate(string.Empty, (current, item) => current + (item + " "));
       string result = string.Empty;
-      foreach (Int64 item in FactorizeFast(number))
+      foreach (long item in FactorizeFast(number))
       {
         result += item + " * ";
       }
 
       result += "1";
-      return string.Format("{0} = {1}", number, result);
+      return $"{number} = {result}";
     }
   }
 }
