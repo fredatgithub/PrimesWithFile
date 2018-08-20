@@ -94,11 +94,11 @@ namespace PrimeWithFile
         _continueCalculating = false;
         StartStopButton.Content = "Resume";
         _chronoStarted = false;
-        LabelSolution.Text = "ListNumber has " + string.Format("{0:n0}", _listNumbers.Count) + " prime numbers found.";
+        LabelSolution.Text = "ListNumber has " + $"{_listNumbers.Count:n0}" + " prime numbers found.";
       }
       else
       {
-        LabelSolution.Text = "ListNumber has " + string.Format("{0:n0}", _listNumbers.Count) + " prime numbers found.";
+        LabelSolution.Text = "ListNumber has " + $"{_listNumbers.Count:n0}" + " prime numbers found.";
         _continueCalculating = true;
         StartStopButton.Content = "Stop";
         _chronoStarted = true;
@@ -128,10 +128,10 @@ namespace PrimeWithFile
       if (!_notAPrime)
       {
         string numberPrimefound = _listNumbers.Count.ToString(CultureInfo.CurrentCulture);
-        BigPrime.Text = string.Format("{0:n0}", _num);
-        LabelSolution.Text = string.Format("ListNumber has {0:n0} prime numbers found.", numberPrimefound);
+        BigPrime.Text = $"{_num:n0}";
+        LabelSolution.Text = $"ListNumber has {numberPrimefound:n0} prime numbers found.";
         _listNumbers.Add(_num);
-        LabelSolution.Text = string.Format("ListNumber has {0:n0} prime numbers found.", _listNumbers.Count);
+        LabelSolution.Text = $"ListNumber has {_listNumbers.Count:n0} prime numbers found.";
       }
 
       if (_num >= ulong.MaxValue - 2)
@@ -151,7 +151,7 @@ namespace PrimeWithFile
       }
 
       _num += 2;
-      LabelSolution.Text = string.Format("ListNumber has {0:n0} prime numbers found.", _listNumbers.Count);
+      LabelSolution.Text = $"ListNumber has {_listNumbers.Count:n0} prime numbers found.";
       if (_continueCalculating)
       {
         StartStopButton.Dispatcher.BeginInvoke(DispatcherPriority.SystemIdle, new NextPrimeDelegate(CheckNextNumber));
@@ -202,15 +202,15 @@ namespace PrimeWithFile
       string length = fileInfo.Length.ToString(CultureInfo.CurrentCulture);
       if (fileInfo.Length >= (1 << 30))
       {
-        length = string.Format("{0}Gb", fileInfo.Length >> 30);
+        length = $"{fileInfo.Length >> 30}Gb";
       }
       else if (fileInfo.Length >= (1 << 20))
       {
-        length = string.Format("{0}Mb", fileInfo.Length >> 20);
+        length = $"{fileInfo.Length >> 20}Mb";
       }
       else if (fileInfo.Length >= (1 << 10))
       {
-        length = string.Format("{0}Kb", fileInfo.Length >> 10);
+        length = $"{fileInfo.Length >> 10}Kb";
       }
 
       return length;
@@ -329,8 +329,7 @@ namespace PrimeWithFile
       {
         Assembly assembly = Assembly.GetExecutingAssembly();
         FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-        result = string.Format("{0}.{1}.{2}.{3}", fvi.FileMajorPart, fvi.FileMinorPart, fvi.FileBuildPart,
-          fvi.FilePrivatePart);
+        result = $"{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
       }
       catch (Exception)
       {
@@ -344,17 +343,17 @@ namespace PrimeWithFile
 
     private string AddSpaceInNumberWithDecimal(ulong number)
     {
-      return String.Format("{0:n}", number);
+      return $"{number:n}";
     }
 
     private string AddSpaceInNumber(ulong number)
     {
-      return String.Format("{0:n0}", number);
+      return $"{number:n0}";
     }
 
     private static string AddCommaInNumber(ulong number)
     {
-      return string.Format("{0:#,#}", number);
+      return $"{number:#,#}";
     }
 
     private void CreateFileCounter()
@@ -434,10 +433,10 @@ namespace PrimeWithFile
       if (!_notAPrime)
       {
         string numberPrimefoundBigInt = _listNumbersBigInt.Count.ToString(CultureInfo.CurrentCulture);
-        BigPrimeBigInt.Text = string.Format("{0:n0}", _bigIntNumber);
-        LabelSolutionBigInt.Text = string.Format("ListNumber has {0} prime numbers found.", _bigIntNumber);
+        BigPrimeBigInt.Text = $"{_bigIntNumber:n0}";
+        LabelSolutionBigInt.Text = $"ListNumber has {_bigIntNumber} prime numbers found.";
         _listNumbersBigInt.Add(_bigIntNumber);
-        LabelSolutionBigInt.Text = string.Format("ListNumber has {0:n0} prime numbers found.", _listNumbersBigInt.Count);
+        LabelSolutionBigInt.Text = $"ListNumber has {_listNumbersBigInt.Count:n0} prime numbers found.";
       }
 
       if (Environment.WorkingSet > 50000000) //50 MB RAM or file.txt > 50 MB
@@ -450,7 +449,7 @@ namespace PrimeWithFile
       }
 
       _num += 2;
-      LabelSolutionBigInt.Text = string.Format("ListNumber has {0:n0} prime numbers found.", _listNumbersBigInt.Count);
+      LabelSolutionBigInt.Text = $"ListNumber has {_listNumbersBigInt.Count:n0} prime numbers found.";
       if (_continueCalculating)
       {
         StartStopButtonBigInt.Dispatcher.BeginInvoke(DispatcherPriority.SystemIdle, new NextPrimeDelegateBigInt(CheckNextNumberBigInt));
